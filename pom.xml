@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.itf</groupId>
-	<artifactId>web_vicente</artifactId>
+	<artifactId>itf-web-jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 
