@@ -6,13 +6,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
 
 import br.com.itf.vicente.dao.LancamentoDao;
 import br.com.itf.vicente.model.Lancamento;
 
 
 
-@ManagedBean
+@Named
 @ViewScoped
 public class ConsultaLancamentoBean implements Serializable{
 	private List<Lancamento> lancamentos = new ArrayList<Lancamento>();

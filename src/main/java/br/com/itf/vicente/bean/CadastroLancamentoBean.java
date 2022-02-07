@@ -9,6 +9,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 import br.com.itf.vicente.dao.EmpresaDao;
 import br.com.itf.vicente.dao.LancamentoDao;
@@ -16,7 +17,7 @@ import br.com.itf.vicente.model.Empresa;
 import br.com.itf.vicente.model.Lancamento;
 import br.com.itf.vicente.model.TipoLancamento;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class CadastroLancamentoBean implements Serializable {
 
