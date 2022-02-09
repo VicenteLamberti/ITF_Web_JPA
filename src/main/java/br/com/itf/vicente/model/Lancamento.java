@@ -30,9 +30,9 @@ public class Lancamento {
 	private Empresa empresa;
 	private String descricao;
 	private Double valor;
-	private LocalDate dataVencimento;
+	private Date dataVencimento;
 	private boolean pago;
-	private LocalDate dataPagamento;
+	private Date dataPagamento;
 	
 	
 	
@@ -42,7 +42,7 @@ public class Lancamento {
 	
 
 	public Lancamento(Integer codigo, TipoLancamento tipo, Empresa empresa, String descricao, Double valor,
-			LocalDate dataVencimento, Boolean pago, LocalDate dataPagamento) {
+			Date dataVencimento, Boolean pago, Date dataPagamento) {
 		super();
 		this.codigo = codigo;
 		this.tipo = tipo;
@@ -94,10 +94,10 @@ public class Lancamento {
 	}
 	
 	
-	public LocalDate getDataVencimento() {
+	public Date getDataVencimento() {
 		return dataVencimento;
 	}
-	public void setDataVencimento(LocalDate dataVencimento) {
+	public void setDataVencimento(Date dataVencimento) {
 		this.dataVencimento = dataVencimento;
 	}
 	public boolean isPago() {
@@ -108,10 +108,10 @@ public class Lancamento {
 	}
 	
 	
-	public LocalDate getDataPagamento() {
+	public Date getDataPagamento() {
 		return dataPagamento;
 	}
-	public void setDataPagamento(LocalDate dataPagamento) {
+	public void setDataPagamento(Date dataPagamento) {
 		this.dataPagamento = dataPagamento;
 	}
 
