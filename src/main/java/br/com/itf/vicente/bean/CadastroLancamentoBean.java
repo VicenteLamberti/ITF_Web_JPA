@@ -27,47 +27,46 @@ public class CadastroLancamentoBean implements Serializable {
 
 	@PostConstruct
 	public void init() {
-		EntityManager em = JPAUtil.getEntityManaget();
-		System.out.println("oi");
+		EntityManager em = JPAUtil.getEntityManager();
 		EmpresaDao empresaDao = new EmpresaDao(em);
-		System.out.println("oi2");
 		this.empresas = empresaDao.list();
-		System.out.println("o3s");
-		
-		
 	}
 
 	public void cadastrar() {
-		EntityManager em = JPAUtil.getEntityManaget();
+		EntityManager em = JPAUtil.getEntityManager();
 		
 		
 		LancamentoDao lancamentoDao = new LancamentoDao(em);
-		em.getTransaction().begin();
+		
 		lancamentoDao.cadastrar(this.lancamento);
 		this.lancamento = new Lancamento();
-		em.getTransaction().commit();
-		em.close();
+	
 		String msg = "Cadastro efetuado com sucesso";
 
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg));
 	}
 
 	public TipoLancamento[] getTiposLancamento() {
+		System.out.println("OSAKSAOPKSPAOKSPOAK oi4-----------------------");
 		return TipoLancamento.values();
 	}
 
 	public Lancamento getLancamento() {
+		System.out.println("OSAKSAOPKSPAOKSPOAK oi3-----------------------");
 		if(this.lancamento == null) {
 			this.lancamento = new Lancamento();
 		}
 		return lancamento;
 	}
 
-	public void setLancamento(Lancamento lancamento) {
-		this.lancamento = lancamento;
-	}
+//	public void setLancamento(Lancamento lancamento) {
+//		System.out.println("alooo");
+//		this.lancamento = lancamento;
+//	}
 
 	public List<Empresa> getEmpresas() {
+		System.out.println("OSAKSAOPKSPAOKSPOAK oi2-----------------------");
+		
 		if(empresas == null) {
 			this.empresas = new ArrayList<Empresa>();
 		}
@@ -75,6 +74,7 @@ public class CadastroLancamentoBean implements Serializable {
 	}
 
 	public void setEmpresas(List<Empresa> empresas) {
+		System.out.println("OSAKSAOPKSPAOKSPOAK oi-----------------------");
 		this.empresas = empresas;
 	}
 

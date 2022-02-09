@@ -17,6 +17,7 @@ import br.com.itf.vicente.model.Lancamento;
 @ManagedBean
 @ViewScoped
 public class ConsultaLancamentoBean implements Serializable{
+	
 	private List<Lancamento> lancamentos = new ArrayList<Lancamento>();
 	private Lancamento lancamentoSelecionado;
 
@@ -31,7 +32,7 @@ public class ConsultaLancamentoBean implements Serializable{
 	@PostConstruct
 	public void inicializar()
 	{
-		EntityManager em = JPAUtil.getEntityManaget();
+		EntityManager em = JPAUtil.getEntityManager();
 		LancamentoDao empresaLancamentoDAO = new LancamentoDao(em);
 		this.lancamentos = empresaLancamentoDAO.listLancamento();
 	}
@@ -41,7 +42,7 @@ public class ConsultaLancamentoBean implements Serializable{
 	}
 	
 	public void excluirLancamento() {
-		EntityManager em = JPAUtil.getEntityManaget();
+		EntityManager em = JPAUtil.getEntityManager();
 		LancamentoDao lancamentoDao = new LancamentoDao(em);
 		lancamentoDao.excluir(this.lancamentoSelecionado);
 //		String msg;

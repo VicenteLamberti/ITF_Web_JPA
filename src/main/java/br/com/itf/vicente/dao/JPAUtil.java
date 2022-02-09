@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 public class JPAUtil {
 
 	public static final EntityManagerFactory FACTORY = Persistence.createEntityManagerFactory("itf-web-jpa-persistence");
-	public static EntityManager getEntityManaget() {
+	public static EntityManager getEntityManager() {
 		return FACTORY.createEntityManager();
 	}
  

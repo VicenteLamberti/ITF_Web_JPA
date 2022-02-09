@@ -20,7 +20,7 @@ public class ObjectConverter implements Converter {
 		
 		if(value != null) {
 			Integer valueConverted = Integer.valueOf(value);
-			EntityManager em = JPAUtil.getEntityManaget();
+			EntityManager em = JPAUtil.getEntityManager();
 			EmpresaDao lancamentoDao = new EmpresaDao(em);
 			retorno = lancamentoDao.listEmpresaById(valueConverted);
 			
