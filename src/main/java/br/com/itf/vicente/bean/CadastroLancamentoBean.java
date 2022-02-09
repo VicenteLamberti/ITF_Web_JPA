@@ -39,9 +39,14 @@ public class CadastroLancamentoBean implements Serializable {
 
 	public void cadastrar() {
 		EntityManager em = JPAUtil.getEntityManaget();
+		
+		
 		LancamentoDao lancamentoDao = new LancamentoDao(em);
+		em.getTransaction().begin();
 		lancamentoDao.cadastrar(this.lancamento);
 		this.lancamento = new Lancamento();
+		em.getTransaction().commit();
+		em.close();
 		String msg = "Cadastro efetuado com sucesso";
 
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg));

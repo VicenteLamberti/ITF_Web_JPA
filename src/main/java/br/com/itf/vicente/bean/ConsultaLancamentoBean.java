@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 import br.com.itf.vicente.dao.JPAUtil;
@@ -14,7 +14,7 @@ import br.com.itf.vicente.model.Lancamento;
 
 
 
-@Named
+@ManagedBean
 @ViewScoped
 public class ConsultaLancamentoBean implements Serializable{
 	private List<Lancamento> lancamentos = new ArrayList<Lancamento>();

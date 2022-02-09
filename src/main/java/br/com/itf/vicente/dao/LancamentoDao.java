@@ -58,7 +58,10 @@ public class LancamentoDao {
 //	}
 	
 	public void cadastrar(Lancamento lancamento) {
+		System.out.println(lancamento);
 		this.em.persist(lancamento);
+		System.out.println(lancamento);
+		System.out.println("Cadastrado DAO");
 		
 	}
 

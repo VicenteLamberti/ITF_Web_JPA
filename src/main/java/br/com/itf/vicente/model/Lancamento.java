@@ -43,8 +43,7 @@ public class Lancamento {
 
 	public Lancamento(Integer codigo, TipoLancamento tipo, Empresa empresa, String descricao, Double valor,
 			Date dataVencimento, Boolean pago, Date dataPagamento) {
-		super();
-		this.codigo = codigo;
+	
 		this.tipo = tipo;
 		this.empresa = empresa;
 		this.descricao = descricao;
@@ -130,6 +129,15 @@ public class Lancamento {
 			return false;
 		Lancamento other = (Lancamento) obj;
 		return codigo == other.codigo;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Lancamento [codigo=" + codigo + ", tipo=" + tipo + ", empresa=" + empresa.getNome() + ", descricao=" + descricao
+				+ ", valor=" + valor + ", dataVencimento=" + dataVencimento + ", pago=" + pago + ", dataPagamento="
+				+ dataPagamento + "]";
 	}
 	
 	
