@@ -13,8 +13,11 @@
 </h:head>
 <h:body>
 	<div id="corpoCadastroLancamento" class="corpo">
+	
 		<h1 id="tituloCadastroLancamento" class="titulo">Cadastro Novo Lançamento Receitas/Despesas</h1>
+		
 		<h:form id="frmNovoLancamento" >
+		
 			<h:button id="btnNovoLancamento" value="Novo Lançamento" outcome="CadastroLancamento" class="botao"></h:button>
 			<h:button id="btnConsultaLancamentos" value="Consulta Lançamentos" outcome="ConsultaLancamento" class="botao"></h:button>
 
@@ -50,7 +53,7 @@
 					class="inputs"
 					value="#{cadastroLancamentoBean.lancamento.valor}" required="true"
 					label="Valor">
-					<f:convertNumber locale="pt_BT" maxFractionDigits="2"
+					<f:convertNumber locale="pt_BR" maxFractionDigits="2"
 						minFractionDigits="2" />
 					<f:validateDoubleRange minimum="0" />
 				</h:inputText>

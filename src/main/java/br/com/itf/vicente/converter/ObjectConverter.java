@@ -4,8 +4,10 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.persistence.EntityManager;
 
 import br.com.itf.vicente.dao.EmpresaDao;
+import br.com.itf.vicente.dao.JPAUtil;
 import br.com.itf.vicente.model.Empresa;
 
 
@@ -15,9 +17,11 @@ public class ObjectConverter implements Converter {
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
 		Empresa retorno = null;
+		
 		if(value != null) {
 			Integer valueConverted = Integer.valueOf(value);
-			EmpresaDao lancamentoDao = new EmpresaDao();
+			EntityManager em = JPAUtil.getEntityManaget();
+			EmpresaDao lancamentoDao = new EmpresaDao(em);
 			retorno = lancamentoDao.listEmpresaById(valueConverted);
 			
 		}

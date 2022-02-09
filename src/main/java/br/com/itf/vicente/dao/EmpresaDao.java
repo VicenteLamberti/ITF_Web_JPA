@@ -9,13 +9,20 @@ import br.com.itf.vicente.model.Empresa;
 public class EmpresaDao {
 
 	private EntityManager em;
+	
+	public EmpresaDao(EntityManager em) {
+		this.em = em;
+	}
 
 	public List<Empresa> list() {
 
 		String jpql = "SELECT emp from Empresa emp";
 		
 		List<Empresa> list = em.createQuery(jpql, Empresa.class).getResultList();
-		return null;
+		for (Empresa empresa : list) {
+			System.out.println(empresa.getNome());
+		}
+		return list;
 
 	}
 

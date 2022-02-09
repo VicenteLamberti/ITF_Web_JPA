@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
 
+import br.com.itf.vicente.dao.JPAUtil;
 import br.com.itf.vicente.dao.LancamentoDao;
 import br.com.itf.vicente.model.Lancamento;
 
@@ -30,7 +31,8 @@ public class ConsultaLancamentoBean implements Serializable{
 	@PostConstruct
 	public void inicializar()
 	{
-		LancamentoDao empresaLancamentoDAO = new LancamentoDao();
+		EntityManager em = JPAUtil.getEntityManaget();
+		LancamentoDao empresaLancamentoDAO = new LancamentoDao(em);
 		this.lancamentos = empresaLancamentoDAO.listLancamento();
 	}
 	
@@ -39,7 +41,8 @@ public class ConsultaLancamentoBean implements Serializable{
 	}
 	
 	public void excluirLancamento() {
-		LancamentoDao lancamentoDao = new LancamentoDao();
+		EntityManager em = JPAUtil.getEntityManaget();
+		LancamentoDao lancamentoDao = new LancamentoDao(em);
 		lancamentoDao.excluir(this.lancamentoSelecionado);
 //		String msg;
 //		if(valido == 1) {

@@ -31,9 +31,30 @@ public class Lancamento {
 	private String descricao;
 	private Double valor;
 	private LocalDate dataVencimento;
-	private Boolean pago;
+	private boolean pago;
 	private LocalDate dataPagamento;
 	
+	
+	
+	public Lancamento() {
+	}
+	
+	
+
+	public Lancamento(Integer codigo, TipoLancamento tipo, Empresa empresa, String descricao, Double valor,
+			LocalDate dataVencimento, Boolean pago, LocalDate dataPagamento) {
+		super();
+		this.codigo = codigo;
+		this.tipo = tipo;
+		this.empresa = empresa;
+		this.descricao = descricao;
+		this.valor = valor;
+		this.dataVencimento = dataVencimento;
+		this.pago = pago;
+		this.dataPagamento = dataPagamento;
+	}
+
+
 
 	public int getCodigo() {
 		return codigo;
@@ -65,10 +86,10 @@ public class Lancamento {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public double getValor() {
+	public Double getValor() {
 		return valor;
 	}
-	public void setValor(double valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 	

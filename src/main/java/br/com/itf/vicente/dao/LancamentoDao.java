@@ -12,7 +12,9 @@ import br.com.itf.vicente.model.Lancamento;
 public class LancamentoDao {
 	private EntityManager em;
 
-	
+	public LancamentoDao(EntityManager em) {
+		this.em = em;
+	}
 
 	public List<Lancamento> listLancamento() {
 		String jpql = "SELECT lanc FROM Lancamento lanc";
