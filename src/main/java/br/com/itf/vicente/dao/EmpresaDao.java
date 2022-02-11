@@ -23,7 +23,6 @@ public class EmpresaDao {
 			System.out.println(empresa.getNome());
 		}
 		return list;
-
 	}
 
 	public Empresa listEmpresaById(Integer codigo) {

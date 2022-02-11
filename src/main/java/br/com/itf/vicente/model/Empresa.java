@@ -61,6 +61,12 @@ public class Empresa implements Serializable{
 		Empresa other = (Empresa) obj;
 		return Objects.equals(codigo, other.codigo) && Objects.equals(nome, other.nome);
 	}
+
+	@Override
+	public String toString() {
+		return "Empresa [codigo=" + codigo + ", nome=" + nome + "]";
+	}
+	
 	
 	
 	

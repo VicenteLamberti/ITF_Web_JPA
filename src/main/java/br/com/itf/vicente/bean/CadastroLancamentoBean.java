@@ -25,21 +25,21 @@ public class CadastroLancamentoBean implements Serializable {
 	private Lancamento lancamento;
 	private List<Empresa> empresas;
 	
-
-
+//	@Autowired
+//	private EmpresaRepository empresaRepository;
 	
 	
 	
-	
-
 	@PostConstruct
 	public void init() {
 		EntityManager em = JPAUtil.getEntityManager();
 		EmpresaDao empresaDao = new EmpresaDao(em);
 		this.empresas = empresaDao.list();
+		
 //		setEmpresas(empresaService.buscarEmpresas());
 	
-//		this.empresas = empresaService.buscarEmpresas();
+//		this.empresas = empresaRepository.findAll();
+		
 	}
 
 	public void cadastrar() {
